@@ -1,0 +1,211 @@
+// Reset
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: inherit;
+    font-family: 'Poppins', sans-serif;
+}
+menu { list-style-type: none; }
+button{ cursor: pointer; }
+body{ overflow-x: hidden; }
+
+// Variables
+$primary-color: #003098;
+$primary-light-color: #3f8cff;
+$primary-dark-color: #002233;
+
+// Global classes
+button{ 
+    border: none;
+    border-radius: 6px;
+    padding: 4px 2.5rem;
+    background: $primary-light-color;
+    &:hover{ background: $primary-color; }
+}
+.gradient{
+    img{width: 100vw; vertical-align: bottom;}
+}
+
+// Modifiers
+._big{ font-weight: 700; font-size: 2rem; }
+._hover { &:hover { color: $primary-light-color}; cursor: pointer; }
+._menu-item { font-weight: 500; font-size: 1.2em;}
+._gray { color: #999; }
+._green{ color: #118c08}
+
+// Layout
+body{ background: $primary-color; }
+
+// Navbar
+nav{
+    position: sticky;
+    top: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background: rgba($color: $primary-color, $alpha: .5);
+    backdrop-filter: blur(32px);
+    .-menu{
+        display: flex;
+        gap: 2vw;
+    }
+    .-btn{
+        background: white;
+        color: $primary-color;
+        border-radius: 1000px;
+        padding: 10px 40px;
+        font-size: 1.5rem;
+    }
+}
+
+// Hero
+.hero{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vh;
+    padding: 7vh 0;
+    ._big{ color:white; }
+    section{ width: 50vw; }
+    button{ 
+        color: white;
+        padding: 1rem 3.5rem;
+        &:hover{background: $primary-dark-color;}
+    }
+}
+
+// Why us?
+.why-us{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 7vh 0;
+    article{
+        display: flex;
+        flex-direction: column;
+        gap: 2vh;
+        border-radius: 6px;
+        width: 25vw;
+        background: white;
+        box-shadow: 7px 7px 15px #222;
+        padding: 1rem;
+        section{
+            aspect-ratio: 1/1;
+            width: 50%;
+            border-radius: 6px;
+            background: #E74040;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        i{
+            font-size: 5rem;
+            color: white;
+        }
+        div{
+            background: #E74040;
+            width: 50%;
+            height: 5px;
+            border-radius: 60px;
+        }
+    }
+}
+
+// Courses
+.courses{
+    .text{
+        text-align: center;
+        color: white;
+    }
+    .cards{
+        display: flex;
+        justify-content: space-evenly;
+        article{
+            padding: 5px;
+            border-radius: 6px;
+            width: 25vw; height: fit-content;
+            background: white;
+            img{ width: 100%; }
+            section{details{ul{margin-left: 2rem;}}}
+        }
+    }
+}
+
+// Reviews
+.review{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 7vh 0;
+    .text{ text-align: center; color: white;}
+    div{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .-review{
+        padding: 1rem;
+        border-radius: 6px;
+        background: white;
+        width: 24vw;
+        section:nth-child(3){
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            img { 
+                border-radius: 100px; 
+                width: 4vw;
+            }
+        }
+    }
+}
+
+
+// Newsletter
+.letter{
+    padding: 6vh 0;
+    background: $primary-dark-color;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+    form{
+        width: 40vw;
+        height: 5vh;
+        display: flex;
+        input{
+            border: none;
+            outline: none;
+        }
+        input[type=email]{
+            padding: 4px 1rem;
+            background: white;
+            color: black;
+            width: 75%;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+        }
+        input[type=submit]{
+            padding: 4px 2.5rem;
+            background: $primary-light-color;
+            width: 20%;
+            &:hover{
+                background: $primary-color;
+            }
+            border-top-right-radius: 6px;
+            border-bottom-right-radius: 6px;
+        }
+    }
+}
+
+// Footer
+footer{
+    padding: 1rem;
+    background: $primary-dark-color;
+    color: white;
+    display: flex;
+    justify-content: space-evenly;
+}
