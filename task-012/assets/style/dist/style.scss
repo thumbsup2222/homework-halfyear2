@@ -1,0 +1,370 @@
+@use 'var';
+@use 'responsive';
+@use 'tool';
+@use 'sass:color';
+
+// Font
+*{ font-family: 'Poppins', sans-serif;}
+
+body{ color:white }
+
+button{
+    border-radius: 1000px;
+    padding: 1vh 2vw;
+    border: none;
+    font-weight: 700;
+}
+.btn-primary{
+    background: var.$btn-color;
+}
+
+// Navbar
+body > header{
+    height: fit-content;
+    background: url('../img/background.png');
+    background-size: cover;
+    background-position: center;
+    & > nav{
+        @extend %def-p;
+        background: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2vh 0;
+        @include responsive.device(md){
+            flex-direction: column;
+            justify-content: center;
+            background: var.$bg;
+        }
+        justify-content: space-around;
+        .text-wrapper > p{
+            font-size: 2.5rem;
+            font-weight: 900;
+        }
+        .menu-wrapper > menu{
+            display: flex;
+            gap: 1rem;
+            li:nth-child(7){
+                display: none;
+            }
+            @include responsive.device(sm){
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                li:nth-child(5), li:nth-child(6){
+                    display: none;
+                }
+                li:nth-child(7){
+                    display: block;
+                }
+            }
+            & > li{ @extend %hover; };
+        }
+    }
+    & > article{
+        padding: 20vh 10vw;
+        @include tool.col-gap(3vh);
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        & > section{
+            display: flex;
+            @include responsive.device(sm){
+                flex-direction: column;
+                gap: 3vh;
+            }
+            gap: 2vw;
+            & > button:nth-child(2) {
+                background: transparent;
+                border: 2px solid white;
+            }
+        }
+    }
+    .card{
+        margin-top: 20vh;
+        border-radius: 10px;
+        padding: 2vw;
+        width: 100%;
+        background: var.$light-bg;
+        color: black;
+        display: flex;
+        @include responsive.device(md){
+            flex-direction: column;
+            gap: 6vh;
+            width: fit-content;
+            hr{ display: none; }
+        }
+        justify-content: space-between;
+        & > section{
+            display: flex;
+            gap: 0.5vw;
+            & > section > i{
+                font-size: 3rem;
+                color: var.$primary-color;
+            }
+            & > p{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                span{ color:#555 }
+            }
+        }
+    }
+}
+
+// Main
+body > main{
+    background: var.$bg;
+    & > *{ @extend %def-p; }
+    & > header{
+        color: black;
+        display: flex;
+        @include responsive.device(lg){
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            @include responsive.device(md){
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        gap: 1.5vw;
+        & > section{
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+            background: var.$light-bg;
+            padding: 1rem;
+            border-radius: 10px;
+            span{ font-size: 5rem; }
+            b{ font-size: 1.5rem; }
+            button{
+                &:last-child{ margin-top: auto; }
+                border: 2px solid var.$secondary-color;
+            }
+            &:last-child{
+                background: lighten($color: var.$secondary-color, $amount: 15);
+                button{
+                    border: 2px solid var.$bg;
+                    background: lighten($color: var.$primary-color, $amount: 30);
+                }
+            }
+        }
+    }
+    .trust{
+        @include tool.col-gap(5vh);
+        header{ 
+            @extend %flex-center;
+            @include tool.col-gap(4vh);
+            text-align: center;
+            p{ width: 75%; } 
+            b{ font-size: 3rem; }
+        }
+        article{
+            display: flex;
+            @include responsive.device(lg){
+                flex-direction: column;
+                align-items: center;
+                figcaption{ display: none; }
+            }
+            gap: 5vw;
+            & > section{ b{font-size: 1.8rem;}}
+            .benefits{
+                @include tool.col-gap();
+                justify-content: space-between;
+                .benefit{ 
+                    & > span{ font-size: 2rem; }
+                    display: flex; 
+                    gap: 1rem;
+                }
+            }
+        }
+    }
+    .comments{
+        background: var.$secondary-color;
+        @include tool.col-gap(4vh);
+        header{ 
+            @extend %flex-center;
+            flex-direction: column;
+            text-align: center;
+            p{ width: 75%; } 
+            b{ font-size: 3rem; }
+        }
+        article{
+            display: flex;
+            @include responsive.device(md){
+                flex-direction: column;
+            }
+            justify-content: space-between;
+            gap: 1rem;
+            section{
+                border-radius: 1rem;
+                padding: .9vw;
+                color: black;
+                background: var.$light-bg;
+                @include tool.col-gap(1.8vh);
+                align-items: center;
+                img{
+                    aspect-ratio: 1/1;
+                    width: 120px;
+                }
+            }
+        }
+    }
+    .team{
+        @include tool.col-gap(2vh);
+        align-items: center;
+        header > b{ font-size: 3rem; }
+        article{
+            display: grid;
+            @include responsive.device(lg){
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                @include responsive.device(md){
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(3, 1fr);
+                    @include responsive.device(sm){
+                        @include tool.col-gap(2vh);
+                    }
+                }
+            }
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 3vw;
+            section{
+                @include tool.col-gap(2vh);
+                border-radius: 1rem;
+                padding: 2vh;
+                width: fit-content;
+                align-items: center;
+                background: var.$light-bg;
+                color: black;
+                span{ color: #555; }
+                img{
+                    aspect-ratio: 1/1;
+                    width: 120px;
+                }
+            }
+        }
+    }
+    & > footer{
+        background: var.$secondary-color;
+        display: flex;
+        @include responsive.device(lg){
+            & > section{ display: none; }
+        }
+        form{
+            width: 100%;
+            @include tool.col-gap(2vh);
+            justify-content: space-between;
+            padding: 1.5vw;
+            background: var.$light-bg;
+            color: black;
+            vertical-align: left;
+            legend{ font-size: 3rem; font-weight: 700; text-align: center; }
+            fieldset{
+                height: 100%;
+                border-radius: 8px;
+                padding: 1rem;
+                @include tool.col-gap();
+            }
+            input{
+                width: 80%;
+                padding: 2vh 3vw;
+                border: none;
+                outline: none;
+                @include responsive.device(md){
+                    width: 100%;
+                }
+            }
+            input[type=submit]{
+                align-self: center;
+                width: fit-content;
+                background: var.$btn-color;
+                border: none;
+                padding: 2.5vh 4vw;
+                border-radius: 1000px;
+                font-weight: 700;
+            }
+        }
+    }
+    & > aside{
+        @include tool.col-gap(2vh);
+        position: fixed;
+        bottom: 2vh;
+        left: 2vh;
+        padding: 16px 3vw;
+        background: var.$light-bg;
+        border-radius: 1rem;
+        color: black;
+        width: 50vw;
+        @include responsive.device(lg){
+            width: 70%;
+            @include responsive.device(md){
+                width: 75%;
+            }
+        }
+        button{ width: fit-content; }
+        .skip{ background: #bbb;}
+    }
+}
+
+
+// Footer
+body > footer{
+    background: var.$bg;
+    & > article{
+        display: flex;
+        justify-content: space-between;
+        @include responsive.device(lg){
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 6rem;
+            @include responsive.device(md){
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        @extend %def-p;
+        & > section{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            menu{
+                display: flex;
+                flex-direction: column;
+                gap: 2vh;
+                .menu-title{
+                    font-size: 2rem;
+                    font-weight: 700;
+                    &:hover{ color:white; }
+                }
+                & > li{ @extend %hover; }
+            }
+        }
+        .newsletter > section{
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+            span{ font-size: 2rem; font-weight: 700; }
+            p{ width: 50%; }
+            & > section{
+                display: flex;
+                gap: 1.5rem;
+                button{
+                    padding: 0;
+                    font-size: 1.5rem;
+                    background: transparent;
+                    border: none;                   
+                    i{ @extend %hover; }
+                }
+            }
+        }
+    }
+    footer{
+        padding: 20px;
+        text-align: center;
+        background: lighten($color: var.$bg, $amount: 10);
+    }
+}

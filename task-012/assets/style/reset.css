@@ -1,0 +1,17 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: inherit;
+    font-family: inherit;
+    max-width: 100vw;
+}
+menu { list-style-type: none; }
+button, a{ cursor: pointer; }
+html, body{ overflow-x: hidden; width: 100vw;}
+body > header,
+body > main,
+body > footer {width: 100vw;}
+img, source, picture{
+    display: block;
+}

@@ -1,0 +1,24 @@
+@use 'var';
+
+%flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%def-p{
+    padding: 5vh 10vw;
+}
+
+%hover{
+    &:hover{ color: var.$primary-color; cursor: pointer; };
+}
+
+@mixin col-gap($gap: 0){
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+    @if($gap == 0){
+        justify-content: space-evenly;
+    }
+}
