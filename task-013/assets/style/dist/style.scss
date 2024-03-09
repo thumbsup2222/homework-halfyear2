@@ -120,6 +120,7 @@ body{
                 .head-text{ font-size: 1.5rem; }
                 .reports{ @include tool.flex($dir:row, $space:flex-start, $gap:1rem); 
                     i{ color:darkgreen; }
+                    .cost{ color:red; }
                 }
                 img{width: 100%;}
             }
