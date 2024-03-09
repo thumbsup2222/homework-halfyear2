@@ -1,0 +1,310 @@
+button {
+  border-radius: 1000px;
+  padding: 1rem 2.5rem;
+  border: none;
+  background: #3B3DCC;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0;
+}
+button:hover {
+  background: hsl(200, 95%, 25%);
+}
+
+.icon-btn {
+  background: transparent;
+  padding: 0;
+  font-size: 2rem;
+}
+.icon-btn:hover {
+  background: inherit;
+}
+
+.container {
+  background: whitesmoke;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: gray 2px 2px 10px;
+}
+.container[theme="1"] {
+  background: #021426;
+  color: white;
+  box-shadow: none;
+}
+
+body {
+  background: #D9DBE9;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: auto;
+  gap: 0;
+}
+body > aside {
+  background: whitesmoke;
+  padding: 1.3vw;
+  width: 25vw;
+  min-height: 100vh;
+  max-height: 120vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: auto;
+  gap: 6vh;
+}
+body > aside[theme="1"] {
+  background: #021426;
+}
+body > aside[theme="1"] {
+  color: white;
+}
+body > aside .name-wrapper > img {
+  width: 100%;
+  height: auto;
+}
+body > aside .menu-wrapper > menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: auto;
+  gap: 1rem;
+  color: #4E4B66;
+}
+body > aside .menu-wrapper > menu > li {
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: auto;
+  gap: 0;
+  align-items: center;
+}
+body > aside .menu-wrapper > menu > li:first-child, body > aside .menu-wrapper > menu li:hover {
+  color: #0476ae !important;
+}
+body > aside .menu-wrapper > menu > li[theme="1"] {
+  color: #9a97b3;
+}
+body > aside .app-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1.5vh;
+}
+body > main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: auto;
+  gap: 0;
+  padding: 2vw 5vw;
+}
+body > main[theme="1"] {
+  background: #25253C;
+  color: white;
+}
+body > main nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+body > main nav #darkmode {
+  color: hsl(200, 95%, 25%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+body > main nav #darkmode .help {
+  color: #4E4B66;
+}
+body > main nav #darkmode[theme="1"] {
+  color: #FFD43B !important;
+}
+body > main nav .navmenu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+body > main nav .navmenu > li:nth-child(3), body > main nav .navmenu li:hover {
+  color: #0476ae !important;
+}
+body > main nav .profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+body > main nav .profile span {
+  font-weight: 700;
+}
+body > main nav .profile #notification-open {
+  color: black;
+}
+body > main nav .profile #notification-open[theme="1"] > i {
+  color: white;
+}
+body > main header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: auto;
+  gap: 5%;
+}
+body > main header > * {
+  flex: 1;
+}
+body > main header .head-text {
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: auto;
+  gap: 0;
+}
+body > main header .head-text b {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: auto;
+  gap: 1rem;
+  font-size: 1.5rem;
+  align-items: center;
+}
+body > main header .head-text b > i {
+  color: darkgreen;
+}
+body > main header .earnings {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: auto;
+  gap: 10px;
+}
+body > main header .growth {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: auto;
+  gap: 10px;
+}
+body > main header .growth ul {
+  list-style-type: none;
+}
+body > main header .growth ul > li:nth-child(1)::before {
+  content: url(../img/gold.svg);
+}
+body > main header .growth ul > li:nth-child(2)::before {
+  content: url(../img/wheel.svg);
+}
+body > main header .growth ul > li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  justify-content: flex-start;
+}
+body > main header .resources {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: auto;
+  gap: 0;
+}
+body > main header .resources menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: auto;
+  gap: 5px;
+  color: #4E4B66;
+}
+body > main header .resources menu > li {
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: auto;
+  gap: 0;
+  border-bottom: 1px solid #4E4B66;
+}
+body > main header .resources menu > li:last-child {
+  border: none;
+}
+body > main header .resources menu > li:hover {
+  color: hsl(200, 95%, 25%);
+}
+body > main article {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: auto;
+  gap: 5%;
+}
+body > main article > section .head-text {
+  font-size: 1.5rem;
+}
+body > main article > section .reports {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: auto;
+  gap: 1rem;
+}
+body > main article > section .reports i {
+  color: darkgreen;
+}
+body > main article > section img {
+  width: 100%;
+}
+body > notification-popup {
+  display: block;
+  padding: 2vw;
+  visibility: hidden;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(3px);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 0;
+}
+body > notification-popup .container {
+  color: #4E4B66;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: auto;
+  gap: 2.5rem;
+}
+body > notification-popup .container i {
+  font-size: 8rem;
+}
+body > notification-popup .container b {
+  margin-bottom: 2rem;
+}
+body > notification-popup .container button {
+  width: 100%;
+  border-radius: 3px;
+}

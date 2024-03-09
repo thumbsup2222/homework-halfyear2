@@ -1,0 +1,20 @@
+@mixin size($x: auto, $y: auto){
+    width: $x;
+    height: $y;
+}
+@mixin flex($gap: 0, $space: space-between, $dir: column, $items: auto){
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $space;
+    align-items: $items;
+    gap: $gap;
+}
+
+@mixin center($dir: column, $gap: 0){
+    display: flex;
+    flex-direction: $dir;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: $gap;
+}

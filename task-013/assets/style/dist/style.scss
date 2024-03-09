@@ -1,0 +1,149 @@
+@use 'responsive';
+@use 'colors';
+@use 'tool';
+@use 'default';
+@use 'sass:color';
+
+body{
+    background: #D9DBE9;
+    @include tool.flex($dir: row);
+    // Sidebar
+    & > aside{
+        background: whitesmoke;
+        &[theme="1"]{ background: #021426;}
+        &[theme="1"]{ color: white; }
+        padding: 1.3vw;
+        width: 25vw;
+        min-height: 100vh;
+        max-height: 120vh;
+        @include tool.flex($space: space-between, $gap: 6vh);
+        // Brand name
+        .name-wrapper > img{ @include tool.size(100%); }
+        // Menu
+        .menu-wrapper > menu{
+            @include tool.flex(1rem);
+            color: colors.$text;
+            $highlighted: colors.$primary;
+            &[theme='1']{ $highlighted: lighten($color: colors.$secondary, $amount: 10); }
+            & > li{
+                width: 100%;
+                @include tool.flex($dir: row-reverse, $space: space-between);
+                align-items: center;
+            }
+            & > li:first-child, li:hover{
+                color: $highlighted !important;
+            }
+            & > li[theme='1']{ color: lighten($color: colors.$text, $amount: 30)}
+        }
+        // App notify
+        .app-wrapper{
+            @include tool.center($gap: 1.5vh);
+        }
+    }
+    // Main content
+    & > main{
+        @include tool.flex();
+        padding: 2vw 5vw;
+        &[theme='1']{ background: #25253C; color:white;}
+        // Navbar
+        nav{
+            @include tool.flex($dir: row, $items: center);
+            #darkmode{
+                color: colors.$secondary;
+                @include tool.flex($dir: row, $items: center, $gap: 1rem);
+                .help{ color: colors.$text; }
+                &[theme='1']{ color:#FFD43B !important; }
+            }
+            .navmenu{
+                @include tool.flex($dir: row, $items: center, $gap: 1rem);
+                $highlighted: colors.$primary;
+                &[theme='1']{ $highlighted: lighten($color: colors.$secondary, $amount: 10) };
+                & > li:nth-child(3), li:hover{
+                    color: $highlighted !important;
+                }
+            }
+            .profile{
+                @include tool.flex($dir: row, $items: center, $gap: 1rem);
+                span{ font-weight: 700; }
+                #notification-open{ color:black; &[theme='1'] > i{ color:white; }}
+            }
+        }
+        // Header
+        header{
+            @include tool.flex($dir: row, $gap: 5%);
+            & > *{ flex:1; }
+            // Header text
+            .head-text{ 
+                font-size: 1.3rem; @include tool.flex();
+                b{ @include tool.flex($dir:row, $space:flex-start, $gap:1rem); 
+                    font-size: 1.5rem;
+                    align-items: center;
+                    & > i{ color:darkgreen; }
+                 }
+            }
+            // Earnings section
+            .earnings{
+                @include tool.flex($gap: 10px);
+            }
+            // Growth section
+            .growth{
+                @include tool.flex($gap: 10px);
+                ul{ 
+                    list-style-type: none;
+                    & > li:nth-child(1)::before{ content: url(../img/gold.svg); }
+                    & > li:nth-child(2)::before{ content: url(../img/wheel.svg); }
+                    & > li{ @include tool.center($dir:row, $gap:4px); justify-content: flex-start;}
+                }
+            }
+            // Resources section
+            .resources{
+                @include tool.flex(); 
+                menu{
+                    @include tool.flex($gap:5px); 
+                    color: colors.$text;
+                }
+                menu > li{
+                    font-size: 1.4rem;
+                    @include tool.flex($dir:row);
+                    border-bottom: 1px solid colors.$text;
+                    &:last-child{ border: none; }
+                    &:hover{
+                        color: colors.$secondary;
+                    }
+                }
+            }
+        }
+        // Article
+        article{
+            @include tool.flex($dir:row, $gap:5%);
+            & > section{
+                .head-text{ font-size: 1.5rem; }
+                .reports{ @include tool.flex($dir:row, $space:flex-start, $gap:1rem); 
+                    i{ color:darkgreen; }
+                }
+                img{width: 100%;}
+            }
+        }
+    }
+    & > notification-popup{
+        display: block;
+        padding: 2vw;
+        visibility: hidden;
+        z-index: 10;
+        position: fixed;
+        top: 0; left: 0;
+        backdrop-filter: blur(3px);
+        @include tool.size(100vw, 100vh);
+        @include tool.center();
+        .container{
+            color: colors.$text;
+            @include tool.flex($gap: 2.5rem);
+            i{ font-size: 8rem; }
+            b{ margin-bottom: 2rem; }
+            button{ 
+                width: 100%;
+                border-radius: 3px;
+            }
+        }
+    }
+}

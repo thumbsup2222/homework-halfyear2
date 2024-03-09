@@ -1,0 +1,31 @@
+@use 'colors';
+@use 'tool';
+@use 'sass:color';
+
+button{
+    border-radius: 1000px;
+    padding: 1rem 2.5rem;
+    border: none;
+    background: colors.$primary;
+    color: white;
+    font-weight: 700;
+    @include tool.center();
+    &:hover{
+        background: colors.$secondary;
+    }
+}
+
+.icon-btn{
+    background: transparent;
+    padding: 0;
+    font-size: 2rem;
+    &:hover{ background: inherit; }
+}
+
+.container{
+    background: whitesmoke;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: gray 2px 2px 10px;
+    &[theme='1']{background: colors.$bg-dark; color: white; box-shadow: none;}
+}

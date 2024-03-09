@@ -1,0 +1,16 @@
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: inherit;
+    font-family: inherit;
+    max-width: 100vw;
+}
+menu { list-style-type: none; }
+button, a, menu > li{ cursor: pointer; }
+body, html{ overflow-x: hidden; }
+body > header,
+body > main,
+body > footer {width: 100vw;}
+img, audio, video{ display: block; }
+a{ text-decoration: none; }
