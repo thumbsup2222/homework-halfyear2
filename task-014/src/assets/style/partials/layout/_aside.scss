@@ -1,0 +1,26 @@
+@use '../core/var' as var;
+@use '../core/utils' as utils;
+
+body > aside{
+    @include utils.size(20%,100vh);
+    padding: 1vw;
+    background: var.$light-sect;
+    @include utils.center($dir: column, $space: space-between);
+    & > *{ width: 100%; }
+    .brand-wrapper{
+        @include utils.center();
+        gap: 0.8rem;
+    }
+    menu{
+        @include utils.flex();
+        .item{
+            @include utils.center(space-between, row-reverse);
+            @extend %hover;
+            font-weight: 700;
+        }
+    }
+    .app-notify{
+        @include utils.center($dir: column);
+        img{ @include utils.size(175px,175px);}
+    }
+}

@@ -1,0 +1,31 @@
+@use 'var' as var;
+
+@mixin flex($dir: column, $space: space-between, $gap: 1rem){
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $space;
+    gap: $gap;
+}
+
+@mixin center($space: center, $dir: row){
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $space;
+    align-items: center;
+    text-align: center;
+}
+
+@mixin size($x, $y){
+    width: $x;
+    height: $y;
+}
+
+%hover{
+    cursor: pointer;
+    transition: .3s;
+    &:hover{ 
+        color: var.$primary-color;
+        scale: 1.05;
+        rotate: -.5deg;
+    }
+}

@@ -1,0 +1,16 @@
+@use '../core/var' as var;
+
+.root-theme{
+    background: var.$light-root-bg;
+    color: black;
+}
+.root-theme-dark{
+    background: var.$dark-root-bg;
+    color: white;
+}
+.sect-theme{
+    background: var.$light-sect;
+}
+.sect-theme-dark{
+    background: var.$dark-sect;
+}

@@ -1,0 +1,57 @@
+@use '../core/var' as var;
+@use '../core/utils' as utils;
+
+body > main{
+    width: 100%;
+    & > nav{
+        @include utils.flex($dir:row);
+        padding: 0;
+        aside{
+            & > img{ 
+                position: absolute;
+                left: -3rem;
+                top: -5rem;
+                @include utils.size(430px, 430px);
+            }
+        }
+        header{
+            @include utils.flex();
+            height: 25vh;
+            .divider{
+                @include utils.flex($dir:row, $gap:1rem);
+                align-items: center;
+                padding: 8px;
+                border-radius: 8px;
+                height: 100%;
+                border: 2px lightgrey solid;
+            }
+        }
+    }
+    & > .header{
+        margin-top: 4vw;
+        @include utils.flex();
+        align-items: flex-start;
+        & > div{
+            @include utils.flex($dir:row);
+        }
+        .section{
+            width: 32%;
+            @include utils.flex($gap:2rem);
+            header{
+                @include utils.flex($dir:row, $space:flex-start);
+                .name > p{ color: gray; }
+                .isfollowed{ 
+                    cursor: pointer;
+                    align-self: center; 
+                    margin-left: auto;
+                    &:hover{
+                        color: #9333ea;
+                    }
+                }
+                .notfollowed{ color: #4338ca; }
+                .followed{ color: #4b5563;}
+            }
+            footer > p{ width: 75%; }
+        }
+    }
+}

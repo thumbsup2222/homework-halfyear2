@@ -1,0 +1,9 @@
+@use 'sass:color';
+
+$light-root-bg: hsl(220,40%,85%);
+$dark-root-bg: hsl(215,90%,10%);
+
+$light-sect: lighten($color: $light-root-bg, $amount: 13);
+$dark-sect: darken($color: $dark-root-bg, $amount: 2);
+
+$primary-color: #047d95;

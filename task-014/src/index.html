@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/style/style.css">
+    <link rel="stylesheet" href="./assets/style/tailwind.css">
+    <link rel="stylesheet" href="./assets/font/font.css">
+    <!-- Title and favicon -->
+    <link rel="shortcut icon" href="./assets/img/brand.svg" type="image/x-icon">
+    <title>GigGuru</title>
+</head>
+<body class="flex root-theme">
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+    <script src="./assets/script/theme.js" defer></script>
+    <script src="./assets/script/notify.js" defer></script>
+    <aside class="sect-theme">
+        <header class="brand-wrapper">
+            <img src="./assets/img/brand.svg" alt="Brand logo">
+            <h1 class="font-black text-2xl">GigGuru</h1>
+        </header>
+        <menu>
+            <li class="item"><img class="icon svg-icon" src="./assets/icons/home.svg" alt="Menu item icon"> Dashboard</li>
+            <li class="item"><img class="icon svg-icon" src="./assets/icons/users.svg" alt="Menu item icon"> My workers</li>
+            <li class="item"><img class="icon svg-icon" src="./assets/icons/search.svg" alt="Menu item icon"> Find workers</li>
+            <li class="item"><img class="icon svg-icon" src="./assets/icons/service.svg" alt="Menu item icon"> Services</li>
+            <li class="item"><img class="icon svg-icon" src="./assets/icons/box.svg" alt="Menu item icon"> My works</li>
+            <li class="item"><img class="icon svg-icon" src="./assets/icons/seeting.svg" alt="Menu item icon"> Settings</li>
+        </menu>
+        <footer class="app-notify">
+            <img id="mobileguy" src="./assets/img/mobile.svg" alt="Happy mobile guy">
+            <p>Download our Mobile App and be updated.</p>
+            <a class="btn btn-primary" target="_blank" href="https://play.google.com/store/apps/details?id=com.gigguruapp.android">Download App</a>
+        </footer>
+    </aside>
+    <main class="p-12">
+        <nav class="sect-theme section relative overflow-hidden">
+            <aside>
+                <img src="./assets/img/house.svg" alt="House">
+            </aside>
+            <section class="flex flex-col justify-end">
+                <header>
+                    <h2 class="text-4xl">We are glad to see you again.</h2>
+                    <div class="flex justify-end gap-5">
+                        <div class="divider">
+                            <img src="./assets/img/profil.png" alt="Profil Icon">
+                            <b>Katie Gardner</b>
+                        </div>
+                        <div class="divider">
+                            <button id="theme-switch"><img class="svg-icon" src="./assets/icons/theme/sun.svg" alt="Sun"></button>
+                            <button id="popup-open"><img class="svg-icon" src="./assets/icons/bell.svg" alt="Bell that don't let me sleep 😂"></button>
+                        </div>
+                    </div>
+                </header>
+                <footer>
+                    <div class="search"></div>
+                    <div class="filter"></div>
+                </footer>
+            </section>
+        </nav>
+        <section class="header">
+            <h2>Recent workers</h2>
+            <div>
+                <section class="section sect-theme">
+                    <header>
+                        <div><img src="./assets/img/data/user1.png" alt="The user icon"></div>
+                        <div class="name">
+                            <h3>Jessica Jane</h3>
+                            <p>Android developer</p>
+                        </div>
+                        <button class="isfollowed notfollowed">
+                            Follow +
+                        </button>
+                    </header>
+                    <footer>
+                        <p>
+                            Hi, I'm Jessica Jane. I'm an Android Developer at Google company . . .
+                        </p>
+                    </footer>
+                </section>
+                <section class="section sect-theme">
+                    <header>
+                        <div><img src="./assets/img/data/user2.png" alt="The user icon"></div>
+                        <div class="name">
+                            <h3>Anna White</h3>
+                            <p>3D Desiger</p>
+                        </div>
+                        <button class="isfollowed followed">
+                            Followed
+                        </button>
+                    </header>
+                    <footer>
+                        <p>
+                            Hi, I'm Anna White. I'm a professional 3D Designer at Blender company . . .
+                        </p>
+                    </footer>
+                </section>
+                <section class="section sect-theme">
+                    <header>
+                        <div><img src="./assets/img/data/user3.png" alt="The user icon"></div>
+                        <div class="name">
+                            <h3>Alex Stanton</h3>
+                            <p>Senior Manager</p>
+                        </div>
+                        <button class="isfollowed notfollowed">
+                            Follow +
+                        </button>
+                    </header>
+                    <footer>
+                        <p>
+                            Hi, I'm Alex Stanton. I'm a senior manager at Apple company . . .
+                        </p>
+                    </footer>
+                </section> 
+            </div>
+        </section>
+    </main>
+    <div id="popup">
+        <section class="sect-theme section">
+            <h2>There is no notifications yet.</h2>
+            <img src="./assets/icons/nobell.svg" alt="Sorry but there is notification so go to sleep 😴">
+            <p>Watch this <a target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">video</a>, until new notifications apper.</p>
+            <button id="close-popup" class="btn btn-primary">Close</button>
+        </section>
+    </div>
+</body>
+</html>
