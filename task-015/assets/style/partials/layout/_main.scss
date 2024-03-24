@@ -1,0 +1,179 @@
+@use '../utils/tool' as tool;
+@use '../utils/var' as var;
+
+body, header, nav, main, footer{ width: 100vw; }
+body::-webkit-scrollbar{ display: none; }
+body{ scrollbar-width: 0; -ms-overflow-style: none; }
+
+body > nav{
+    @include tool.flex(row, 1rem, center, space-between);
+    @include tool.device(md) {
+        @include tool.flex(column, 12px, center, center);
+    }
+    #mobile-menu-btn{ display: none; @include tool.device(md) { display: block; } }
+    menu{
+        @include tool.flex(row, 1.25rem, center, space-between);
+        @include tool.device(xl) {
+            display: grid;
+            gap: 1.25rem;
+            grid-template-columns: repeat(3, 1fr);
+            @include tool.device(md) {
+                grid-template-columns: repeat(1, 1fr);
+                display: none;
+            }
+        }
+        font-weight: 700;
+    }
+    .btn-wrapper{
+        @include tool.flex(row, 1.25rem, center, space-between);
+        @include tool.device(xl) {
+            @include tool.flex(column, 1.25rem, flex-end, center);
+            @include tool.device(md) {
+                @include tool.flex(row, 1.25rem, center, center);  
+            }
+        }
+    }
+}
+
+body > header{
+    @include tool.flex(column, 2rem, center, center);
+    background: hsl(220, 65%, 10%);
+    .brand{ width: 30%;
+        @include tool.device(lg) {
+            width: 65%;
+            @include tool.device(md) {
+                width: 80%;
+                @include tool.device(sm) {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    h1{
+        font-size: 4rem;
+        @include tool.device(lg) {
+            font-size: 2.5rem;
+            @include tool.device(md) {
+                font-size: 2rem;
+                @include tool.device(sm) {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+    img{
+        @include tool.device(sm) {
+            display: none;
+        }
+    }
+    p{
+        text-align: center;
+        @include tool.device(md) { text-align: left ;}
+    }
+}
+
+body > main{
+    .why-use{
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var.$gradient-color;
+    }
+    .big-text{
+        font-size: 2.5rem;
+        font-weight: 700;
+
+    }
+    .benefit-section{
+        padding: 5vh 8vw;
+        .benefits{
+            @include tool.flex(row, 1.25rem, flex-start, space-between);
+            @include tool.device(md) {
+                @include tool.flex(column, 1.25rem, center, center);
+            }
+            .benefit{
+                background: whitesmoke;
+                border-radius: 8px;
+                padding: 1rem;
+                width: 30%;
+                @include tool.flex(column, 1.75rem, center, center);
+                @include tool.device(md) {
+                    width: 100%;
+                }
+                img{ @include tool.size(100%, 100%); }
+                h3{
+                    font-weight: 700;
+                    font-size: 2rem;
+                }
+                p{
+                    color: gray;
+                }
+            }
+        }
+    }
+    .how-it-works{
+        padding: 5vh 8vw;
+        .get-started{
+            @include tool.flex(row, 1.25rem, flex-start, space-between);
+            @include tool.device(md) {
+                @include tool.flex(column, 1.25rem, center, center);
+            }
+        }
+        .get-started > section{
+            background: whitesmoke;
+            border-radius: 8px;
+            padding: 1rem;
+            width: 30%;
+            @include tool.flex(column, 1.75rem, center, center);
+            @include tool.device(md) {
+                width: 100%;
+            }
+            img{ 
+                @include tool.size(100%, 100%);
+                background: var.$primary-bg-color; 
+                padding: 10px;
+                border-radius: inherit;
+            }
+            h3{
+                font-weight: 700;
+                font-size: 2rem;
+            }
+            p{
+                text-align: center;
+                color: gray;
+            }
+        }
+    }
+}
+
+body > footer{
+    background: var.$primary-bg-color;
+    color: white;
+    @include tool.flex(column, 1.25rem, center, center);
+    .menu-wrapper{
+        padding: 5vh 8vw;
+        width: 100vw;
+        @include tool.flex(row, 1.25rem, flex-start, space-between);
+        @include tool.device(md) {
+            display: grid;
+            gap: 1rem;
+            grid-template-columns: repeat(2, 1fr);
+            @include tool.device(sm) {
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+        menu{
+            @include tool.flex(column, 1.25rem, flex-start, center);
+            h2{
+                font-weight: 700;
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .copyright{
+        width: 100vw;
+        background: var.$secondary-bg-color;
+        text-align: center;
+        font-size: 1.25rem;
+        padding: 2rem 100px;
+    }
+}

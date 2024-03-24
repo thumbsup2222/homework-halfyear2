@@ -1,0 +1,51 @@
+@use '../utils/tool' as tool;
+@use '../utils/var' as var;
+
+.btn {
+    max-height: 3.25rem;
+    padding: 10px 22px;
+    @include tool.device(sm) {
+        padding: 8px 14px;
+    }
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: white;
+    cursor: pointer;
+    @extend %center;
+    transition: 400ms;
+}
+.btn-primary{
+    background: linear-gradient(110deg, var.$gradient-color, var.$secondary-color);
+    &:hover{
+        background: linear-gradient(70deg, var.$gradient-color, var.$secondary-color 80%);
+    }
+}
+.btn-secondary-wrapper{
+    height: 3.25rem;
+    @extend %center;
+    background: linear-gradient(110deg, var.$gradient-color, var.$secondary-color);
+    border-radius: 8px;
+    padding: 4px;
+    &:hover{
+        background: linear-gradient(70deg, var.$gradient-color, var.$secondary-color 80%);
+    }
+    .btn-secondary{
+        height: 100%;
+        background: var.$secondary-bg-color;
+        border-radius: 6px;
+    }
+}
+.inline-btn{
+    cursor: pointer;
+    transition: 400ms;
+    &:hover{
+        scale: 1.05;
+        rotate: -1deg; 
+        color: var.$primary-color;
+    }
+}
+
+.icon{
+    @include tool.size(2rem, 2rem);
+}
