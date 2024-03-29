@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/font/font.css">
+    <link rel="stylesheet" href="../assets/style/tailwind.css">
+    <link rel="shortcut icon" href="../assets/img/brand.svg" type="image/x-icon">
+    <title>DCY crypto wallet | Login</title>
+</head>
+<body class="bg-slate-950 min-h-screen flex justify-center items-center" style="background: conic-gradient(from 225deg at 50% 50%, #0f172a, #10182c, #111c31, #142239, #162944, #173150, #183a5c, #164369, #134c74, #0f537d, #095783, #075985);">
+    <script src="../assets/script/loginPage.min.js" defer></script>
+    <div id="loadingScreen" class="flex justify-center items-center h-screen">
+        <span class="text-white text-xl">Loading...</span>
+    </div>
+    <main id="mainContent" class="bg-sky-950 bg-opacity-50 hidden w-full min-h-screen lg:w-[40%] p-2">
+        <section id="init" class="min-h-screen flex flex-col items-center justify-center gap-10">
+            <h1 class="text-white text-center text-3xl font-black">Log In to DCY account.</h1>
+            <img src="../assets/img/login/wallet.svg" alt="Wallet">
+            <div class="flex flex-col gap-6">
+                <button id="signupBtn" class="rounded-full w-[190px] sm:w-[280px] bg-gradient-to-r from-orange-500 via-pink-900 to-indigo-800 text-white text-xl font-bold py-4">Sign Up</button>
+                <button id="loginBtn" class="rounded-full w-[190px] sm:w-[280px] bg-sky-950 hover:bg-sky-900 text-white text-xl font-bold py-4">Log In</button>
+            </div>
+        </section>
+        <section id="signup" class="hidden flex-col justify-center items-center min-h-screen">
+            <h1 class="text-white text-center text-3xl font-black">Log In to DCY account.</h1>
+            <form action="./success.html" target="_self" class="flex flex-col gap-3">
+                <label for="username" class="text-white">Username:</label>
+                <input type="text" id="username" name="username" class="bg-transparent outline-none border-2 rounded-full text-white p-2" required autocomplete="username" placeholder="johndoe3554">
+                
+                <label for="password" class="text-white">Password:</label>
+                <input type="password" id="password" name="password" class="bg-transparent outline-none border-2 rounded-full text-white p-2" required autocomplete="current-password" placeholder="Enter your password">
+
+                <label for="email" class="text-white">Email:</label>
+                <input type="email" id="email" name="email" class="bg-transparent outline-none border-2 rounded-full text-white p-2" required placeholder="example@example.com">
+
+                <label for="firstName" class="text-white">First Name:</label>
+                <input type="text" id="firstName" name="firstName" class="bg-transparent outline-none border-2 rounded-full text-white p-2" required placeholder="John">
+                
+                <label for="lastName" class="text-white">Last Name (optional):</label>
+                <input type="text" id="lastName" name="lastName" class="bg-transparent outline-none border-2 rounded-full text-white p-2" placeholder="Doe">
+                
+                <label for="phone" class="text-white">Phone number:</label>
+                <input type="tel" id="phone" name="phone" class="bg-transparent outline-none border-2 rounded-full text-white p-2" required placeholder="+1 (123) 456-7890">
+
+                <button type="submit" class="rounded-full w-[190px] sm:w-[280px] bg-gradient-to-r from-orange-500 via-pink-900 to-indigo-800 text-white text-xl font-bold py-4">Log In</button>
+
+                <button type="button" id="cancelBtn" class="text-white text-xl font-bold">Cancel</button>
+            </form>
+        </section>
+        <section id="login" class="hidden flex-col justify-center items-center min-h-screen">
+            <h1 class="text-white text-center text-3xl font-black">Sign Up to DCY account.</h1>
+            <form action="./success.html" target="_self" class="flex flex-col gap-3">
+                <label for="username" class="text-white">Username:</label>
+                <input type="text" id="login_username" name="login_username" class="bg-transparent outline-none border-2 rounded-full text-white p-2" required autocomplete="username" placeholder="johndoe3554">
+
+                <label for="password" class="text-white">Password:</label>
+                <input type="password" name="login_password" id="login_password" class="bg-transparent outline-none border-2 rounded-full text-white p-2" required autocomplete="current-password" placeholder="Enter your password">
+
+                <button type="submit" class="rounded-full w-full bg-gradient-to-r from-orange-500 via-pink-900 to-indigo-800 text-white text-xl font-bold py-4">Log In</button>
+                <button type="button" id="cancelBtnLogin" class="text-white text-xl font-bold">Cancel</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
