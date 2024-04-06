@@ -1,0 +1,14 @@
+{
+  "name": "page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch --no-source-map --style=compressed ./assets/style/style.scss ./assets/style/style.css",
+    "tailwind": "npx tailwindcss -i ./assets/style/tailwind.root.css -o ./assets/style/tailwind.css --watch --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
