@@ -2,4 +2,4 @@
 
 `index.js` - Original version (unmified).
 
-`app.js` Minified version of **index.js**.
+`app.js` - Minified version of **index.js**.
