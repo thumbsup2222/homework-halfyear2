@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/font/font.css">
+    <link rel="stylesheet" href="./assets/style/tailwind.css">
+    <link rel="stylesheet" href="./assets/style/global.css">
+    <link rel="shortcut icon" href="./assets/brand.svg" type="image/x-icon">
+    <title>Daddy's Pizza</title>
+</head>
+<body class="no-scroll">
+    <script src="./assets/script/app.js" defer></script>
+    <nav class="sticky top-0 left-0 z-50 bg-orange-200 justify-between items-center">
+        <div class="flex items-center gap-1">
+            <img class="w-[60px] aspect-square" src="./assets/brand.svg" alt="The brand logo.">
+            <span class="text-3xl tracking-wider font-bold">Daddy's Pizza</span>
+        </div>
+        <menu class="flex gap-4 
+            text-xl tracking-wider font-regular text-orange-900 
+            hover:*:text-orange-600 cursor-pointer">
+            <li class="text-orange-600 border-b-2 border-b-orange-600">
+                <a class="font-bold" href="#" class="">Home</a></li>
+            <li><a href="#menu">Food Menu</a></li>
+            <li><a href="#locations">Locations</a></li>
+            <li><a href="https://youtu.be/U2RroQKm1Ho?feature=shared&t=14" target="_blank">Recipes</a"></a></li>
+            <li><a href="./contact/index.html">Contact</a></li>
+        </menu>
+    </nav>
+    <nav class="nav-secondary bg-orange-300" id="promocode-notify">
+        <span class="m-auto">Use <b class="cursor-help">DADDY15</b> promocode to get 15% discount.</span>
+        <button id="promocode-exit-button">
+            <img src="./assets/ico/exit.svg" alt="Exit icon. The 'X' icon." class="aspect-square w-6">
+        </button>
+    </nav>
+    <header class="
+    bg-[url(../img/bg.jpg)] bg-center bg-cover bg-no-repeat h-screen
+    flex-col gap-12 items-start relative">
+        <h1 class="text-7xl font-bold text-white w-1/3">
+            High quality and natural pizzas made with love.
+        </h1>
+        <p class="text-3xl text-white w-1/2">
+            Daddy's Pizza. High-quality, delicious, healthy 
+            and natural pizza made with love. Available 134 restaurants
+            in 12 countries with 20+ years of experience and dedication.
+        </p>
+        <div class="flex gap-4 items-center">
+            <button class="rounded-full border-4 border-orange-600 px-16 py-4
+                text-white font-bold text-2xl bg-orange-400 bg-opacity-50
+                backdrop-blur-sm">
+            <a href="#menu">Look menu</a>
+            </button>
+            <hr class="bg-white rounded-full h-full w-1">
+            <a href="https://youtu.be/U2RroQKm1Ho?feature=shared&t=14" target="_blank" class="text-white underline text-2xl">Learn our recipes</a>
+        </div>
+    </header>
+    <main class="bg-orange-100 flex-col gap-32
+        [&>article]:flex">
+        <article class="relative">
+            <div>
+                <h2 class="text-3xl font-bold text-orange-600">Natural indegredients</h2>
+                <p class="mt-2 mb-6 text-lg w-[90%]">
+                    Our pizzas are made with 100% natural ingredients. We use fresh vegetables
+                    from farms around the world. The meat is also naturally sourced and come from
+                    farms. No artifical or GMO ingredients is used. We use only the freshest ingredients.
+                </p>
+                <img src="./assets/img/sheeps.jpg" alt="The sheeps in farm." class="w-4/5 rounded-md" loading="lazy">
+            </div>
+            <img src="./assets/img/farm_small.jpg" alt="The image of farm." 
+            class="rounded-md w-1/3 bottom-5 left-1/2 -translate-x-1/2 absolute">
+            <img src="./assets/img/farm.jpg" alt="The image of farm." loading="lazy" 
+            class="rounded-md w-1/2 h-fit" loading="lazy">
+        </article>
+        <article class="relative">
+            <img src="./assets/img/kitchen.jpg" alt="The kitchen table containing spons containing spices." loading="lazy"
+            class="w-1/2 rounded-md h-fit">
+            <img src="./assets/img/knives.jpg" alt="Knives" class="absolute bottom-5 left-1/2 -translate-x-1/2 w-1/3" loading="lazy">
+            <div class="text-right">
+                <h2 class="text-3xl font-bold text-orange-600">We take quality seriously</h2>
+                <p class="mt-2 mb-6 text-lg">
+                    With usage of natural indegredients we make high-quality and delicious pizzas.
+                    Our pizzas carefully cooked to perfection. We operated our business since 1989
+                    in 12 countries with dedication and hard-work.
+                </p>
+                <img src="./assets/img/washroom.jpg" alt="Washroom in kitchen." class="w-[90%] ml-auto rounded-md" loading="lazy">
+            </div>
+        </article>
+        <article class="flex-col gap-4" id="locations">
+            <h2 class="text-3xl font-bold text-orange-600 text-center">Our locations</h2>
+            <p class="text-center text-lg">We worked on 134 restaurants in 12 countries. Here are our some of most popular restaurants:</p>
+            <div class="grid grid-cols-2 gap-12 justify-items-center 
+                [&>section>p]:w-full [&>section>iframe]:border-2
+                [&>section>iframe]:border-black [&>section>iframe]:rounded-md">
+                <div class="bg-orange-50 w-fit p-4 rounded-md">
+                    <iframe loading="lazy" width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=-119.79349493980409%2C36.73585336222958%2C-119.78847384452821%2C36.738755167990426&amp;layer=mapnik&amp;marker=36.737304278821654%2C-119.79098439216614"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=36.73730&amp;mlon=-119.79098#map=18/36.73730/-119.79098&amp;layers=N">View Larger Map</a></small>
+                    <p>
+                        California, United States. <br>
+                        L Street, Fresno, Fresno County.
+                    </p>
+                </div>
+                <div class="bg-orange-50 w-fit p-4 rounded-md">
+                    <iframe loading="lazy" width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=-74.08506989479066%2C40.72577898732395%2C-74.08004879951478%2C40.728523058998576&amp;layer=mapnik&amp;marker=40.72715103730492%2C-74.08255934715271"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=40.72715&amp;mlon=-74.08256#map=18/40.72715/-74.08256&amp;layers=N">View Larger Map</a></small>
+                    <p>
+                        New Jersey, United States. <br>
+                        Lincoln Park, Jersey City, Hudson County. 
+                    </p>
+                </div>
+                <div class="bg-orange-50 w-fit p-4 rounded-md">
+                    <iframe loading="lazy" width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=-0.025958418846130375%2C51.51253182571854%2C-0.020937323570251465%2C51.51478526451146&amp;layer=mapnik&amp;marker=51.51365855904934%2C-0.023447871208190918"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=51.51366&amp;mlon=-0.02345#map=18/51.51366/-0.02345&amp;layers=N">View Larger Map</a></small>
+                    <p>
+                        London, England, United Kingdom. <br>
+                        Bartlett park, Lindfield Street. 
+                    </p>
+                </div>
+                <div class="bg-orange-50 w-fit p-4 rounded-md">
+                    <iframe loading="lazy" width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=-97.14257240295412%2C49.88839639513371%2C-97.13755130767824%2C49.890729259822194&amp;layer=mapnik&amp;marker=49.88956284157258%2C-97.14006185531616"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=49.88956&amp;mlon=-97.14006#map=18/49.88956/-97.14006&amp;layers=N">View Larger Map</a></small>
+                    <p>
+                        Fort Rouge-East Fort Garry, Winnipeg, Canada. <br>
+                        Carne Italian Chophouse, 160, Smith Street, South Portage.
+                    </p>
+                </div>
+                <div class="bg-orange-50 w-fit p-4 rounded-md">
+                    <iframe loading="lazy" width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=2.3313438892364506%2C48.8481348935307%2C2.33385443687439%2C48.84932628589667&amp;layer=mapnik&amp;marker=48.848730593257066%2C2.33259916305542"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=48.84873&amp;mlon=2.33260#map=19/48.84873/2.33260&amp;layers=N">View Larger Map</a></small>
+                    <p>
+                        Paris, France. Rue de Vaugirard. <br>
+                        Quartier de l'Odéon, 6th Arrondissement.
+                    </p>
+                </div>
+                <div class="bg-orange-50 w-fit p-4 rounded-md">
+                    <iframe loading="lazy" width="425" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=119.10771846771242%2C36.70310048401803%2C119.11776065826417%2C36.70890646111807&amp;layer=mapnik&amp;marker=36.70600352739688%2C119.11273956298828"></iframe><br/><small><a href="https://www.openstreetmap.org/?mlat=36.70600&amp;mlon=119.11274#map=17/36.70600/119.11274&amp;layers=N">View Larger Map</a></small>
+                    <p>
+                        Weifang, Shandong, China. <br>
+                        Dongguan, Kuiwen District.
+                    </p>
+                </div>
+            </div>
+        </article>
+        <article class="flex-col gap-4" id="menu">
+            <h2 class="text-3xl text-orange-600 font-bold text-center">Our menu</h2>
+            <p class="text-center text-xl">Our food menu. Here are our some of most popular pizzas.</p>
+            <div class="grid grid-cols-2 gap-12 justify-items-center
+                [&>section]:w-96 [&>section]:p-4 [&>section]:bg-orange-50 
+                [&>section>img]:w-full [&>section>img]:rounded-md
+                [&>section>h3]:text-2xl [&>section>h3]:text-center 
+                [&>section>h3]:text-orange-700 [&>section]:rounded-md">
+                <section>
+                    <h3>Standart pizza</h3>
+                    <img src="./assets/img/standart-pizza.jpg" alt="Pizza" loading="lazy" class="mb-3">
+                    <form class="relative">
+                        <div class="grid grid-cols-[1fr,auto] gap-1 [&>label]:align-middle
+                            [&>input[type=radio]]:accent-orange-600 w-fit">
+                            <input type="radio" name="size" id="sm" value="Small" required>
+                            <label for="sm">Small</label>
+                            <input type="radio" name="size" id="md" value="Medium" required>
+                            <label for="md">Medium</label>
+                            <input type="radio" name="size" id="lg" value="Large" required>
+                            <label for="lg">Large</label>
+                            <input type="radio" name="size" id="xl" value="Extra large" required>
+                            <label for="xl">Extra large</label>
+                        </div>
+                        <input type="submit" value="Add to card" class="btn-primary absolute
+                        right-0 top-2">
+                    </form>
+                </section>
+                <section>
+                    <h3>BBQ pizza</h3>
+                    <img src="./assets/img/bbq-pizza.jpg" alt="Pizza" loading="lazy" class="mb-3">
+                    <form class="relative">
+                        <div class="grid grid-cols-[1fr,auto] gap-1 [&>label]:align-middle
+                            [&>input[type=radio]]:accent-orange-600 w-fit">
+                            <input type="radio" name="size" id="sm" value="Small" required>
+                            <label for="sm">Small</label>
+                            <input type="radio" name="size" id="md" value="Medium" required>
+                            <label for="md">Medium</label>
+                            <input type="radio" name="size" id="lg" value="Large" required>
+                            <label for="lg">Large</label>
+                            <input type="radio" name="size" id="xl" value="Extra large" required>
+                            <label for="xl">Extra large</label>
+                        </div>
+                        <input type="submit" value="Add to card" class="btn-primary absolute
+                        right-0 top-2">
+                    </form>
+                </section>
+                <section>
+                    <h3>New York Pizza</h3>
+                    <img src="./assets/img/ny-pizza.jpg" alt="Pizza" loading="lazy" class="mb-3">
+                    <form class="relative">
+                        <div class="grid grid-cols-[1fr,auto] gap-1 [&>label]:align-middle
+                            [&>input[type=radio]]:accent-orange-600 w-fit">
+                            <input type="radio" name="size" id="sm" value="Small" required>
+                            <label for="sm">Small</label>
+                            <input type="radio" name="size" id="md" value="Medium" required>
+                            <label for="md">Medium</label>
+                            <input type="radio" name="size" id="lg" value="Large" required>
+                            <label for="lg">Large</label>
+                            <input type="radio" name="size" id="xl" value="Extra large" required>
+                            <label for="xl">Extra large</label>
+                        </div>
+                        <input type="submit" value="Add to card" class="btn-primary absolute
+                        right-0 top-2">
+                    </form>
+                </section>
+                <section>
+                    <h3>Vegetarian pizza</h3>
+                    <img src="./assets/img/vegan-pizza.jpg" alt="Pizza" loading="lazy" class="mb-3">
+                    <form class="relative">
+                        <div class="grid grid-cols-[1fr,auto] gap-1 [&>label]:align-middle
+                            [&>input[type=radio]]:accent-orange-600 w-fit">
+                            <input type="radio" name="size" id="sm" value="Small" required>
+                            <label for="sm">Small</label>
+                            <input type="radio" name="size" id="md" value="Medium" required>
+                            <label for="md">Medium</label>
+                            <input type="radio" name="size" id="lg" value="Large" required>
+                            <label for="lg">Large</label>
+                            <input type="radio" name="size" id="xl" value="Extra large" required>
+                            <label for="xl">Extra large</label>
+                        </div>
+                        <input type="submit" value="Add to card" class="btn-primary absolute
+                        right-0 top-2">
+                    </form>
+                </section>
+                <section>
+                    <h3 class="flex items-center gap-1 w-fit m-auto">Double-cheese pizza <span class="bg-orange-600 
+                        rounded-full px-3 py-1 text-xs text-white inline-block">New</span></h3>
+                    <img src="./assets/img/cheese.jpg" alt="Pizza" loading="lazy" class="mb-3">
+                    <form class="relative">
+                        <div class="grid grid-cols-[1fr,auto] gap-1 [&>label]:align-middle
+                            [&>input[type=radio]]:accent-orange-600 w-fit">
+                            <input type="radio" name="size" id="sm" value="Small" required>
+                            <label for="sm">Small</label>
+                            <input type="radio" name="size" id="md" value="Medium" required>
+                            <label for="md">Medium</label>
+                            <input type="radio" name="size" id="lg" value="Large" required>
+                            <label for="lg">Large</label>
+                            <input type="radio" name="size" id="xl" value="Extra large" required>
+                            <label for="xl">Extra large</label>
+                        </div>
+                        <input type="submit" value="Add to card" class="btn-primary absolute
+                        right-0 top-2">
+                    </form>
+                </section>
+                <section>
+                    <h3>Italian pizza</h3>
+                    <img src="./assets/img/italian.jpg" alt="Pizza" loading="lazy" class="mb-3">
+                    <form class="relative">
+                        <div class="grid grid-cols-[1fr,auto] gap-1 [&>label]:align-middle
+                            [&>input[type=radio]]:accent-orange-600 w-fit">
+                            <input type="radio" name="size" id="sm" value="Small" required>
+                            <label for="sm">Small</label>
+                            <input type="radio" name="size" id="md" value="Medium" required>
+                            <label for="md">Medium</label>
+                            <input type="radio" name="size" id="lg" value="Large" required>
+                            <label for="lg">Large</label>
+                            <input type="radio" name="size" id="xl" value="Extra large" required>
+                            <label for="xl">Extra large</label>
+                        </div>
+                        <input type="submit" value="Add to card" class="btn-primary absolute
+                        right-0 top-2">
+                    </form>
+                </section>
+            </div>
+        </article>
+        <article class="flex-col gap-4">
+            <h2 class="text-3xl font-bold text-orange-600 text-center">Testimonials</h2>
+            <p class="text-center text-lg">Here are some of our happy customers. Read their stories to know why they are statisfied.</p>
+            <div class="grid grid-cols-3 gap-2
+                [&>section]:p-4 [&>section]:bg-orange-50 [&>section]:rounded-md
+                [&>section>h3]:text-2xl [&>section>h3]:text-orange-700">
+                <section>
+                    <h3>Ann J. Lewis</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <b>In ex corporis architecto repudiandae dicta laborum totam</b> recusandae saepe cupiditate incidunt, magni veniam alias minima nemo sequi quam quidem delectus ipsum.</p>
+                </section>
+                <section>
+                    <h3>Allen P. Prather</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In ex corporis architecto repudiandae dicta laborum totam recusandae saepe cupiditate incidunt, <b>magni veniam alias minima nemo sequi quam quidem delectus</b> ipsum.</p>
+                </section>
+                <section>
+                    <h3>Marie E. Cummins</h3>
+                    <p><b>Lorem ipsum dolor sit amet consectetur adipisicing elit</b>. In ex corporis architecto repudiandae dicta laborum totam recusandae saepe cupiditate incidunt, magni veniam alias minima nemo sequi quam quidem delectus ipsum.</p>
+                </section>
+            </div>
+        </article>
+    </main>
+    <footer class="bg-orange-950 flex justify-between items-start
+    [&_li]:text-lg
+    hover:[&_li]:text-orange-600 hover:[&_li>h2]:text-white
+    hover:[&_li]:cursor-pointer hover:[&_li>h2]:cursor-default">
+        <div>
+            <div class="flex items-center gap-1 mb-3">
+                <img class="w-[60px] aspect-square" src="./assets/brand.svg" alt="The brand logo.">
+                <h2 class="text-3xl tracking-wider font-bold">Daddy's Pizza</h2>
+            </div>
+            <p class="w-[20pc]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum cupiditate deleniti iure fuga! Est adipisci architecto cumque, totam recusandae id!</p>
+        </div>
+        <menu class="[&>li>h2]:text-3xl [&>li>h2]:font-bold">
+            <li><h2>Company</h2></li>
+            <li>About Us</li>
+            <li>Our history</li>
+            <li>Our Team</li>
+            <li>Careers</li>
+            <li>Blog</li>
+        </menu>
+        <menu class="[&>li>h2]:text-3xl [&>li>h2]:font-bold">
+            <li><h2>Get in Tocuh</h2></li>
+            <li>Instagram</li>
+            <li>Facebook</li>
+            <li>X (Twitter)</li>
+            <li>YouTube</li>
+            <li>TikTok</li>
+        </menu>
+        <menu class="[&>li>h2]:text-3xl [&>li>h2]:font-bold">
+            <li><h2>Foods</h2></li>
+            <li>Pizza</li>
+            <li>Pasta</li>
+            <li>Cheeseburger</li>
+            <li>Hotdog</li>
+        </menu>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,26 @@
+body,html { color: #431407; }
+body::-webkit-scrollbar {
+    display: none;
+}
+html {
+    scrollbar-width: none;
+}
+  
+body > *:not(script){
+    width: 100vw; 
+    display: flex;
+    padding: 2rem 8rem;
+}
+footer{color:white}
+.nav-secondary{ padding: 4px; }
+.btn-primary{
+    border-radius: 8px;
+    padding: .75rem 3rem;
+    background: #ea580c;
+    font-size: 18px; font-weight: 700;
+    color: #fff7ed;
+    letter-spacing: .05rem;
+    width: fit-content;
+    cursor: pointer;
+    &:hover{ background: #ff7741; }
+}

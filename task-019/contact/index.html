@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/font/font.css">
+    <link rel="stylesheet" href="../assets/style/tailwind.css">
+    <link rel="stylesheet" href="../assets/style/global.css">
+    <link rel="shortcut icon" href="../assets/brand.svg" type="image/x-icon">
+    <title>Daddy's Pizza | Contact</title>
+</head>
+<body class="h-screen flex flex-col">
+    <script src="./app.js" defer></script>
+    <nav class="z-50 bg-orange-200 justify-between items-center">
+        <div class="flex items-center gap-1">
+            <img class="w-[60px] aspect-square" src="../assets/brand.svg" alt="The brand logo.">
+            <span class="text-3xl tracking-wider font-bold">Daddy's Pizza</span>
+        </div>
+        <menu class="flex gap-4 
+            text-xl tracking-wider font-regular text-orange-900 
+            hover:*:text-orange-600 cursor-pointer">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../index.html#menu">Food Menu</a></li>
+            <li><a href="../index.html#locations">Locations</a></li>
+            <li><a href="https://youtu.be/U2RroQKm1Ho?feature=shared&t=14" target="_blank">Recipes</a></li><a href="https://youtu.be/U2RroQKm1Ho?feature=shared&t=14" target="_blank"></a></li>
+            <li class="font-bold text-orange-600 
+                border-b-2 border-b-orange-600">
+                Contact
+            </li>
+        </menu>
+    </nav>
+    <main class="bg-orange-100 flex grow justify-center items-center">
+        <div
+            class="rounded-md p-4 bg-orange-200 flex gap-2 h-full w-[40vw]">
+            <div>
+                <menu id="contact-menu" class="overflow-hidden [&>li]:p-3 [&>li]:rounded-md [&>li]:cursor-pointer
+                    [&>li]:w-[clamp(10.5rem,11.5rem,12.5rem)]
+                    hover:[&>li]:bg-orange-600 [&>li]:text-lg
+                    [&>li]:flex [&>li]:gap-2 [&>li]:justify-between
+                    [&>li]:items-center
+                    [&_img]:w-6 [&_img]:aspect-square">
+                    <li id="online-chat-btn">Online chat <img src="../assets/ico/chat.svg" alt="Online chat"></li>
+                    <li id="phone-btn">Phone <img src="../assets/ico/phone.svg" alt="Phone icon"></li>
+                    <li id="mail-btn">E-mail <img src="../assets/ico/mail.svg" alt="E-mail icon"></li>
+                    <li id="complain-btn">Complain <img src="../assets/ico/thumbs-down.svg" alt="Complaining, thumbs up"></li>
+                    <li id="idea-btn">Send idea <img src="../assets/ico/idea.svg" alt="Idea lamp"></li>
+                </menu>
+            </div>
+            <hr class="bg-amber-900 rounded-full w-1 h-full">
+            <section id="contact-section" class="bg-orange-300
+                flex flex-col gap-1 w-full rounded-md p-3
+                [&_p]:w-[clamp(10rem,22rem,28rem)]
+                [&>ul]:list-disc [&>ul]:pl-5
+                [&_h3]:text-xl [&_h3]:font-bold 
+                [&_h2]:text-3xl [&_h2]:font-bold
+                [&_label]:text-xl [&_label]:font-bold
+                [&_form]:flex [&_form]:gap-1 [&_form]:flex-col
+                [&_input]:border-2 [&_input]:border-orange-600
+                [&_textarea]:border-2 [&_textarea]:border-orange-600
+                [&_input]:rounded-md [&_textarea]:rounded-md
+                [&_input[name=name]]:w-3/4 [&_input[name=name]]:p-1
+                [&_input[name=name]]:bg-orange-100 [&_textarea]:bg-orange-100
+                [&_input[name=email]]:bg-orange-100 [&_input[name=email]]:p-1
+                [&_input[name=email]]:w-3/4
+                [&_textarea]:p-1 [&_form>*]:outline-none 
+                [&_textarea]:resize-none [&_textarea]:h-[clamp(15rem,17rem,20rem)] 
+                [&_input[type=submit]]:cursor-pointer"></section>
+        </div>
+    </main>
+</body>
+</html>
