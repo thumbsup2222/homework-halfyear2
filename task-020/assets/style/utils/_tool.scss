@@ -1,0 +1,27 @@
+@use 'color' as color;
+
+@mixin flex($d: row, $c: space-between, $i: center, $g: .5rem) {
+    display: flex;
+    flex-direction: $d;
+    justify-content: $c;
+    align-items: $i;
+    gap: $g;
+}
+@mixin type($s:1rem, $f:400, $w:0.8px){
+    font-size: $s;
+    font-weight: $f;
+    letter-spacing: $w;
+}
+@mixin sqrsize($a) {
+    width: $a;
+    height: $a;
+}
+@mixin size($a, $b) {
+    width: $a;
+    height: $b;
+}
+%hover {
+    cursor: pointer;
+    transition: .3s;
+    &:hover{ color: color.$green-light; scale: 1.05;}
+}

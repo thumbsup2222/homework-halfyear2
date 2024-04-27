@@ -1,0 +1,156 @@
+@use 'utils/color' as color;
+@use 'utils/tool' as tool;
+
+body{ letter-spacing: 0.8px; }
+.btn{
+    border-radius: 8px;
+    padding: 1rem 2.5rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+.btn-primary{
+    background: color.$green-normal;
+    transition: .3s;
+    &:hover{ color: color.$text; background: color.$green-light; }
+}
+body > *{
+    padding: 5vh 8vw;
+    color: color.$text;
+}
+body > nav{
+    @include tool.flex();
+    background: color.$green-dark;
+    .brand{
+        width: fit-content;
+        @include tool.flex();
+        .name{ @include tool.type(1.5rem, 700, 2px); }
+        .icon{ @include tool.sqrsize(2.5rem); }
+    }
+    menu{
+        @include tool.flex($g: 1rem);
+        @include tool.type($s: 1.25rem, $w: 1px);
+        & > li { @extend %hover; }
+    }
+}
+body > header{
+    position: relative;
+    background: 
+        linear-gradient(to right, color.$trans-bg, transparent) no-repeat center,
+        url(../img/salad.jpg) no-repeat center;
+    background-size: cover;
+    @include tool.flex($d: column, $i: flex-start, $c: center, $g: 2.5rem);
+    h1{ @include tool.type(3rem, 700, 2px); width: 50%;}
+    p{ @include tool.type(1.5rem, 400, 2px); width: 50%; }
+    .review-section{
+        background: color.$trans-bg;
+        padding: 2.5rem;
+        border-radius: 8px;
+        position: absolute;
+        right: 8vw;
+        @include tool.flex($d:column, $i:flex-start, $g:1.5rem);
+        h2{ @include tool.type(1.5rem, 700); @include tool.flex();}
+        img { @include tool.sqrsize(6rem); }
+        & > span {
+            @include tool.flex($c:flex-start);
+            img { @include tool.sqrsize(1.5rem); }
+            span { margin-left: 3rem; }
+        }
+    }
+}
+body > main{
+    padding: 0;
+    & > article { 
+        padding: 6vh 8vw;
+    }
+    h1,h2{ color: color.$text-dark; text-align: center;}
+    h1{ 
+        @include tool.type(2.5rem, 700); 
+        padding-top: 1rem; 
+        background: color.$green-light; 
+    }
+    h2{ @include tool.type(1.75rem, 700); }
+    $colors: color.$green-light, color.$green-normal-light, color.$green-normal, color.$green-dark;
+    @each $color in $colors {
+        article:nth-child(#{index($colors, $color) + 1}){ background: $color; }
+    }
+    p{ font-size: 18px; }
+    .text{
+        @include tool.flex();
+        & > *{ width: 33%; }
+        img{ width: 30%; border-radius: 8px;}
+        .left-image{
+            @include tool.flex($d:column, $i:flex-start);
+            & > img { @include tool.size(100%, 46%) }
+        }
+        .text-wrapper { @include tool.flex($d:column, $g:1.5rem)}
+        .text-wrapper > img { width: 100%;}
+    }
+    .menu, .testimonials{ 
+        h2, p{ text-align: center; } 
+        @include tool.flex($d:column, $g:1.5rem);
+    }
+    .testimonials{
+        h2{ color: color.$green-normal-light; }
+        p{ color: color.$text; }
+    }
+    .section-wrapper{
+        width: 100%;
+        @include tool.flex($c:space-evenly,$i:flex-start);
+        & > section{
+            @include tool.flex($d:column, $g:0.5rem);
+            width: clamp(20%,25%,30%);
+            border-radius: 8px;
+            background: color.$text;
+            color: color.$text-dark;
+            padding: 1rem;
+            img{ 
+                width: 100%;
+                border-radius: 8px;
+                border: 4px color.$green-dark solid;
+            }
+            h3{ 
+                @include tool.type(1.25rem, 700);
+                text-align: center;
+            }
+            p{ text-align: left; color: color.$text-dark; }
+            .price{
+                @include tool.flex($c:space-between);
+                button{ width: 75%; }
+            }
+        }
+    }
+}
+body > footer{
+    background: color.$green-darker;
+    @include tool.flex($i:flex-start);
+    .newsletter{
+        width: 40%;
+        @include tool.flex($g:1.5rem,$i:flex-start);
+        .brand-wrapper{
+            @include tool.flex($d:column, $i:flex-start, $c:center);
+            width: 50%;
+        }
+        .brand{
+            width: fit-content;
+            @include tool.flex($i:center, $c:center);
+            .name{ @include tool.type(1.5rem, 700, 2px); grid-area: 'name'; }
+            .icon{ @include tool.sqrsize(2.5rem); grid-area: 'icon'; }
+        }
+        form{ 
+            width: 50%;
+            @include tool.flex($d:column, $g:1.5rem);
+            input{
+                outline: none;
+                width: 100%; 
+            }
+        }
+    }
+    ul{
+        list-style: none;
+        @include tool.flex($d:column, $i:flex-start, $g:1rem);
+        li:first-child{ &:hover{ color:inherit} }
+        li{ margin-left: 8px; @extend %hover; }
+        h1{ @include tool.type(1.5rem, 700); }
+    }
+}

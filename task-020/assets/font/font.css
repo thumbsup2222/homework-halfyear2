@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Base Font';
+    src: 
+    url('./Aleo-Medium.woff2'),
+    url('./Aleo-Regular.woff2'),
+    url('./Aleo-Bold.woff2'),
+}
+* {
+    font-family: 'Base Font', sans-serif;
+    font-weight: 400;
+}
