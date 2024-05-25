@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/font/font.css">
+    <link rel="stylesheet" href="./assets/style/tw.css">
+    <link rel="shortcut icon" href="./assets/img/favicon.svg" type="image/x-icon">
+    <title>TO-DO App</title>
+</head>
+<body class="flex h-screen items-center justify-center bg-sky-50">
+    <script src="./assets/script/app.js" defer></script>
+    <main class="bg-sky-100 rounded-md p-[3vw] flex flex-col items-center gap-4">
+        <h1 class="text-3xl font-bold">TO-DO App</h1>
+        <form id="form">
+            <input type="text" id="task" placeholder="Enter task" id="task" class="
+            py-1 px-2 text-xl rounded outline-none mr-3">
+            <input type="submit" value="Add" class="bg-slate-900 text-xl font-bold
+            text-white px-4 py-1 rounded h-full hover:bg-blue-900 cursor-pointer">
+        </form>
+        <div id="error" class="bg-red-300 rounded border-l-4 border-l-red-800
+            w-full p-3 hidden items-center justify-between" id="error">
+            <span class="text-red-700">Please enter a task!</span>
+            <img src="./assets/img/error.svg" alt="Error" class="w-6 h-6">
+        </div>
+        <ul id="list" class="bg-sky-300 p-1 w-full rounded list-decimal
+        flex gap-2 flex-col overflow-y-scroll h-[50vh]
+        [&>li]:p-2 [&>li]:rounded [&>li]:bg-cyan-300 [&>li]:flex [&>li]:items-center [&>li]:justify-between
+        [&>li>button]:h-8 [&>li>button]:aspect-square [&>li>button]:bg-slate-900 [&>li>button]:rounded-md"></ul>
+    </main>
+</body>
+</html>
