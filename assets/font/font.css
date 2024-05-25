@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Base Font';
+    src: 
+        url('./Poppins-Regular.ttf') format('truetype'),
+        url('./Poppins-Bold.ttf') format('truetype');
+}*{
+    font-family: 'Base Font', sans-serif;
+}
