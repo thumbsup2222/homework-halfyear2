@@ -2,7 +2,7 @@
 import * as THREE from 'three';
 import { threeJS } from './renderer';
 
-function wawe(){
+{
 // Get screen resolution.
 const dpr = window.devicePixelRatio;
 const width = screen.availWidth;
@@ -63,5 +63,3 @@ function animate() {
     }
     renderer.render(scene, camera);
 }; animate(); }
-
-wawe();

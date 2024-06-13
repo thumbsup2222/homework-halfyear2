@@ -2,7 +2,7 @@
 import * as THREE from 'three';
 import { threeJS } from './renderer';
 
-function map(){
+{
 // Get screen resolution.
 const height = screen.availHeight * .9;
 const width = height;
@@ -15,11 +15,11 @@ const scene = template.scene;
 
 // Create camera and set its position and rotation.
 const camera = template.camera;
-camera.position.z = 12;
+camera.position.z = 10;
 camera.position.y = 2;
-camera.position.x = 5;
+camera.position.x = 6;
 camera.rotateZ(2);
-camera.rotateX(0.5);
+camera.rotateX(0.65);
 camera.updateProjectionMatrix();
 
 // Create renderer and put ligth.
@@ -30,6 +30,10 @@ light.position.y = 2;
 light.position.z = 1;
 scene.add( light );
 
+// Create RNG function.
+function rng(n,d=n) {
+    return Math.floor(Math.random()*n)/d;
+}
 // Create cube assets.
 const assets = [
     0x1e3a8a, // Deep sea
@@ -41,10 +45,63 @@ const assets = [
     0x404040, // Upper mountain
     0xf1f5f9, // Snow
 ]
+// Special Assets
+const specialAssets = [
+    0xf59e0b,
+    0x4d7c0f,
+]
 // Create function that creates cubes.
+function randomHeight(n) {
+    return n + Math.floor(Math.random()*10)/40;
+}
+function randomColor(n) {
+    if(rng(4,1)===0) return specialAssets[n];
+}
+function createDetail(x,y,z,color) {
+    const mesh = new THREE.BoxGeometry(x,y,z);
+    const material = new THREE.MeshStandardMaterial({color: color})
+    return {
+        mesh: mesh,
+        material: material,
+    }
+}
+const stone = createDetail(.15,.1,.25,0xa8a29e)
+const grass = createDetail(.08,.08,.35,0x4d7c0f);
+function addDetail(x, y, z, freq, detailMesh, material) {
+    for (let i = 0; i < freq; i++) {
+        const mesh = new THREE.Mesh(detailMesh,material);
+        mesh.position.x = x+rng(10)-0.5;
+        mesh.position.y = y+rng(10)-0.5;
+        mesh.position.z = z - 1;
+        scene.add(mesh);
+    }
+}
 function cube(n, x, y) {
-    const cube = new THREE.BoxGeometry(1,1,(n < 2 ? 0.9 : (n === 7 ? 8 : n*n / 5)));
-    const material = new THREE.MeshStandardMaterial({color: assets[n]});
+    let height;
+    let color = assets[n];
+    switch (n) {
+        case 0:
+        case 1:
+            height = 1;
+            break;
+        case 2:
+            height = randomHeight(n); color = randomColor(0);
+            addDetail(x,y,n,1,stone.mesh,stone.material);
+            break;
+        case 3:
+            height = randomHeight(n); color = randomColor(1);
+            addDetail(x,y,n,3,grass.mesh,grass.material);
+            break;
+        case 7:
+            height = n*n*0.2;
+            break;
+        default:
+            height = n*n*0.25;
+            break;
+    }
+    if(color === undefined) color = assets[n];
+    const cube = new THREE.BoxGeometry(1,1,height);
+    const material = new THREE.MeshStandardMaterial({color: color});
     const mesh = new THREE.Mesh(cube, material);
     mesh.position.x = x;
     mesh.position.y = y;
@@ -72,5 +129,3 @@ for (let i = 0; i < map.length; i++) {
 }
 renderer.render(scene, camera);
 }
-
-map();
